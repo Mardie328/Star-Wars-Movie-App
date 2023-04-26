@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-container {
+  min-height: 100vh;
+  background-color: black;
+  padding-bottom: 50px;
+}
+
+/* Logo component */
+.logo-container {
+  text-align: center;
+  padding: 30px 30px;
+}
+
+.logo {
+  fill: #ffe81f;
+  width: 500px;
+}
+
+/* AllMovieCards component */
+.AllMovieCards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 34px;
+  width: 82%;
+  margin: 20px auto;
+}
+
+/* Loading state */
+.loader-logo {
+  fill: #ffe81f;
+  width: 8%;
+  margin: auto;
+  grid-column: 1 / span 3;
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/* MovieCard component */
+
+.movie-card-container {
+  min-height: 340px;
+  border-radius: 1%;
+  padding: 24px 23px 17px 23px;
+}
+
+.movie-card-container:hover {
+  box-shadow: #16688f 0px 0px 10px 7px;
+}
+
+.movie-name {
+  font-size: 1.7rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.release-date {
+  color: #838383;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.opening-crawl {
+  font-size: 1.1rem;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  padding-bottom: 25px;
+  border-bottom: solid #8e2e2e 3px;
+}
+
+.more-info {
+  color: #ffe81f;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .AllMovieCards-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 850px) {
+  .AllMovieCards-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 82%;
+    grid-gap: 25px;
+  }
+}
+
+@media (max-width: 850px) {
+  .AllMovieCards-container {
+    grid-template-columns: repeat(1, 1fr);
+    width: 60%;
+    margin: 20px auto;
+  }
+
+  .logo {
+    width: 450px;
+  }
+
+  .movie-card-container {
+    min-height: 190px;
+    border-radius: 1%;
+    padding: 24px 23px 17px 23px;
+  }
+}
+
+@media (max-width: 610px) {
+  .AllMovieCards-container {
+    width: 80%;
+    margin: 5px auto 20px auto;
+  }
+
+  .logo {
+    width: 400px;
+  }
+
+  .movie-card-container {
+    padding: 24px 23px 17px 23px;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo-container {
+    padding: 20px 30px;
+  }
+
+  .logo {
+    width: 300px;
+  }
+
+  /* AllMovieCards component */
+  .AllMovieCards-container {
+    grid-gap: 23px;
+    width: 94%;
+    margin: 5px auto 20px auto;
+  }
+
+  /* MovieCard component */
+
+  .movie-card-container {
+    min-height: 190px;
+    padding: 20px 20px 17px 20px;
+  }
+
+  .movie-name {
+    font-size: 1.5rem;
+  }
+
+  .release-date {
+    color: #838383;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .opening-crawl {
+    font-size: 1rem;
+  }
+}
